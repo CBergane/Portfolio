@@ -1,1 +1,1 @@
-web: gunicorn bergane.wsgi
+web: gunicorn bergane.wsgi --log-file -
