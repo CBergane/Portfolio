@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'portfolio',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bergane.context_processors.project_context',
             ],
         },
     },
