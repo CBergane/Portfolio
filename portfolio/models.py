@@ -122,7 +122,7 @@ class Blog(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            slef.slug = slugify(self.name)
+            self.slug = slugify(self.name)
         super(Blog, self).save(*args, **kwargs)
 
     def __str__(self):

@@ -142,3 +142,16 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_WHITELIST = [
+    'https://8000-cbergane-portfolio-ttcez9bdao9.ws-eu92.gitpod.io',
+]
+
+# Alternatively, you can use '*' to allow any origin:
+CORS_ORIGIN_ALLOW_ALL = True
+
+CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com'
+CSRF_TRUSTED_ORIGINS = [
+    'https://cbergane.herokuapp.com',
+    'https://8000-cbergane-portfolio-ttcez9bdao9.ws-eu92.gitpod.io',
+]
