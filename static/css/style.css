@@ -17,18 +17,64 @@ font-family: 'Heebo', sans-serif; */
   --black: 900;
   --lightBg: #F1F1F1;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: var(--baseFont);
   color: var(--baseColor);
   line-height: normal;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 img {
   max-width: 100%;
 }
+
+a {
+  color: inherit;
+}
+a:hover {
+  color: var(--primaryDarkColor);
+}
+a, .btn {
+  -webkit-transition: all 300ms ease-in-out 0s;
+  -o-transition: all 300ms ease-in-out 0s;
+  transition: all 300ms ease-in-out 0s;
+  text-decoration: none;
+}
+/* Buttons */
+.btn:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: var(--medium);
+  padding: 8px 20px;
+  border-radius: 2px;
+}
+
+.btnPrimary {
+  background-color: var(--primaryColor);
+  color: var(--bs-white);
+}
+
+.btnPrimary:hover {
+  background-color: var(--primaryDarkColor);
+  color: var(--bs-white);
+}
+/* End Buttons */
+
+/* Banner */
 
 .banner {
 	padding: 180px 0 80px;
@@ -41,6 +87,7 @@ img {
   border-radius: 50%;
   position: relative;
 }
+
 .bannerImg img {
   width: 100%;
   height: 100%;
@@ -49,6 +96,7 @@ img {
   border-radius: 50%;
   position: relative;
 }
+
 .bannerImg::before {
   content: "";
   position: absolute;
@@ -58,6 +106,49 @@ img {
   height: 100%;
   background-color: #EDF7FA;
   border-radius: 50%;
+}
+
+.bannerBtnCol {
+	padding-top: 15px;
+}
+
+/* End Banner */
+
+.xlTitle {
+  font-size: 44px;
+  line-height: 1.3;
+  font-weight: var(--bold);
+  font-family: var(--titleFont)
+}
+
+.lgTitle {
+  font-size: 30px;
+  line-height: normal;
+  font-weight: var(--bold);
+  font-family: var(--titleFont)
+}
+
+.mdTitle {
+  font-size: 26px;
+  line-height: normal;
+  font-weight: var(--bold);
+  font-family: var(--titleFont)
+}
+
+.smTitle {
+  font-size: 22px;
+  line-height: normal;
+  font-weight: var(--regular);
+  font-family: var(--titleFont)
+}
+
+.smText {
+  font-size: 22px;
+}
+
+.xsTitle {
+  font-size: 18px;
+  line-height: normal;
 }
 
 input[type=text], input[type=email], select, textarea {
