@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Bergane - Home {% endblock %}
+{% block description %}{% endblock %}
+
 {% block content %}
 
-<h1>Hello world</h1>
+<section>
+    <div class="banner">
+        <div class="container">
+            <div class="row g-4 g-md-3 align-items-center">
+                <div class="col-md-auto order-md-last">
+                    <div class="bannerImg">
+                        <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
