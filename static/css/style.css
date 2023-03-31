@@ -16,6 +16,7 @@ font-family: 'Heebo', sans-serif; */
   --bold: 700;
   --black: 900;
   --lightBg: #F1F1F1;
+  --bs-white: #ffffe0;
 }
 
 html {
@@ -72,6 +73,17 @@ a, .btn {
   background-color: var(--primaryDarkColor);
   color: var(--bs-white);
 }
+
+.btnOutline {
+	border: 1px solid var(--primaryDarkColor);
+	color: var(--primaryDarkColor);
+}
+.btnOutline:hover {
+	border: 1px solid var(--primaryDarkColor);
+  background-color: var(--primaryDarkColor);
+	color: var(--bs-white);
+}
+
 /* End Buttons */
 
 /* Banner */
@@ -112,6 +124,13 @@ a, .btn {
 	padding-top: 15px;
 }
 
+.sectionSpace {
+  padding: 80px 0;
+}
+.sectionSpaceSm {
+  padding: 35px 0;
+}
+
 /* End Banner */
 
 .xlTitle {
@@ -150,6 +169,45 @@ a, .btn {
   font-size: 18px;
   line-height: normal;
 }
+
+/* Skills */
+.ksText {
+	display: block;
+	padding-top: 10px;
+}
+.keySkillCard + .keySkillCard {
+  padding-top: 25px;
+}
+
+.ksIconCol{
+  height: 30px;
+  width: 30px;
+  left: 0;
+}
+.keySkillCol {
+  width: 300px;
+}
+.pLbl {
+  display: block;
+  width: 50px;
+  text-align: right;
+}
+
+.progress.progressStyle {
+	height: 8px;
+	padding: 1px;
+	background-color: var(--secondaryColor);
+	border-radius: 3px;
+}
+.progressStyle .progress-bar {
+	background-color: #fff;
+	border-radius: 3px;
+}
+.progressCol + .progressCol {
+	padding-top: 18px;
+}
+
+/* End skills */
 
 input[type=text], input[type=email], select, textarea {
   width: 100%;
@@ -211,6 +269,8 @@ input[type=text], input[type=email], select, textarea {
   justify-content: center;
   display: flex;
 }
+
+/* Footer */
 
 .icons a {
   margin: 20px 20px;

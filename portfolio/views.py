@@ -11,22 +11,23 @@ from .models import (
 )
 
 class IndexView(generic.TemplateView):
-    template_name = 'index.html'
+	template_name = "index.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		
+		testimonials = Testimonial.objects.filter(is_active=True)
+		certificates = Certificate.objects.filter(is_active=True)
+		blogs = Blog.objects.filter(is_active=True)
+		portfolio = Portfolio.objects.filter(is_active=True)
+		
+		context["testimonials"] = testimonials
+		context["certificates"] = certificates
+		context["blogs"] = blogs
+		context["portfolio"] = portfolio
+		return context
 
-        testimonials = Testimonial.objects.filter(is_active=True)
-        certificates = Certificate.objects.filter(is_active=True)
-        blogs = Blog.objects.filter(is_active=True)
-        portfolio = Portfolio.objects.filter(is_active=True)
 
-        context['testimonials'] = testimonials
-        context['certificates'] = certificates
-        context['blogs'] = blogs
-        context['portfolio'] = portfolio
-
-        return context
 
 
 class ContactView(generic.FormView):
