@@ -7,7 +7,7 @@ font-family: 'Heebo', sans-serif; */
   --primaryColor: #9C07B6;
   --primaryDarkColor: #3D0048;
   --primaryHoverColor: #900AA8;
-  --secondaryColor: #F9B000;
+  --secondaryColor: #0b7bf3f4;
   --baseColor: #21243D;
   --baseFont: 'Poppins', sans-serif;
   --titleFont: 'Poppins';
@@ -84,6 +84,24 @@ a, .btn {
 	color: var(--bs-white);
 }
 
+.swiperBtnStyle {
+	width: 35px;
+	height: 35px;
+	color: #fff;
+	background-color: var(--primaryColor);
+	border-radius: 50%;
+}
+
+.swiper-button-next.swiperBtnStyle::after, .swiper-button-prev.swiperBtnStyle::after {
+  font-size: 16px;
+}
+.swiperBtnStyle.swiper-button-prev {
+	left: 2px;
+}
+.swiperBtnStyle.swiper-button-next {
+	right: 2px;
+}
+
 /* End Buttons */
 
 /* Banner */
@@ -133,6 +151,16 @@ a, .btn {
 
 /* End Banner */
 
+/* Sections */
+
+.sectionSpace {
+  padding: 80px 0;
+}
+.sectionSpaceSm {
+  padding: 35px 0;
+}
+
+/* End Sections */
 .xlTitle {
   font-size: 44px;
   line-height: 1.3;
@@ -270,6 +298,28 @@ input[type=text], input[type=email], select, textarea {
   display: flex;
 }
 
+/* Certificates */
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.cardStyle1 {
+	padding: 25px;
+	background-color: var(--bs-white);
+	border-radius: 4px;
+  height: 100%;
+}
+.cardStyle1 > p:last-child {
+	margin-bottom: 0;
+}
+.cs1Title {
+  min-height: 90px;
+}
+
+/* End Certificates */
+
 /* Footer */
 
 .icons a {
@@ -341,4 +391,267 @@ input[type=text], input[type=email], select, textarea {
 .icons a:hover .text{
   bottom: -10px;
   opacity: 1;
+}
+
+/* Media */
+
+@media (min-width:576px) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+@media (min-width:992px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  	max-width: 890px;
+  }
+  .headerCol .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (min-width:1200px) {
+  .headerCol .container-fluid {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
+@media (max-width:1199px) {
+  .navCol a {
+  	font-size: 18px;
+  }
+  .xlTitle {
+  	font-size: 40px;
+  }
+  .lgTitle {
+  	font-size: 28px;
+  }
+  .mdTitle {
+  	font-size: 24px;
+  }
+  .btn {
+  	font-size: 18px;
+  }
+  .cs1Title {
+  	min-height: 60px;
+  }
+  .bannerSection {
+  	padding: 150px 0 60px;
+  }
+  .sectionSpace {
+  	padding: 60px 0;
+  }
+  .footerCol {
+  	padding: 30px 0;
+  }
+  .innerPageBannerCol {
+  	padding: 150px 0 100px;
+  }
+}
+
+@media (max-width:991px) {
+  .sliderOuter .swiper-button-next.swiperBtnStyle {
+    right: -20px;
+  }
+  .sliderOuter .swiper-button-prev.swiperBtnStyle {
+    left: -20px;
+  }
+  .navCol a {
+  	font-size: 16px;
+  }
+  .xlTitle {
+  	font-size: 32px;
+  }
+  body {
+    font-size: 14px;
+  }
+  .bannerUserImg {
+  	margin-left: 20px;
+  	width: 220px;
+  	height: 220px;
+  }
+  .btn {
+  	font-size: 16px;
+  }
+  .bannerBtnCol {
+  	padding-top: 10px;
+  }
+  .smTitle {
+  	font-size: 18px;
+  }
+  .keySkillCard + .keySkillCard {
+  	padding-top: 20px;
+  }
+  .keySkillCol {
+  	width: 250px;
+  }
+  .cs1Title {
+  	min-height: auto;
+  }
+
+  .innerPageBannerCol{
+  	padding: 120px 0 50px;
+  }
+  .portfolioRow .pColMain:nth-child(2n-1) .pCol {
+  	margin-top: -70px;
+  }
+  .portfolioContentMain {
+  	padding: 30px 0;
+  }
+}
+
+@media (max-width:767px) {
+  .navCollapseCol {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 230px;
+    padding: 20px;
+    background: var(--primaryDarkColor);
+    z-index: 99;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 300ms ease-in-out 0s;
+    -o-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+  }
+  .navToggleActive .navCollapseCol {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .navCol {
+  	text-align: left;
+  }
+  .navCol li + li {
+  	padding-left: 0;
+  }
+  .navCol li {
+  	padding: 5px 0;
+  }
+  .navCol li {
+  	display: block;
+  }
+  .navCol a::before {
+    display: none;
+  }
+  .navCol a {
+  	font-size: 16px;
+    color: var(--bs-white);
+  }
+
+  .bannerUserImg {
+  	margin-left: 0;
+  	width: 180px;
+  	height: 180px;
+  }
+  .bannerSection {
+  	padding: 120px 0 50px;
+  }
+  .tImgCol {
+  	margin-right: 0;
+  }
+  .socialCol img {
+  	max-width: 20px;
+  	max-height: 20px;
+  }
+  .socialCol li + li {
+  	padding-left: 20px;
+  }
+  .copyrightCol {
+  	padding: 15px 0 0;
+  	font-size: 12px;
+  }
+  .footerCol {
+  	padding: 20px 0;
+  }
+  .mdTitle {
+  	font-size: 22px;
+  }
+  .lgTitle {
+  	font-size: 24px;
+  }
+  .smText {
+  	font-size: 18px;
+  }
+  .dateLbl {
+  	font-size: 15px;
+  }
+  .sectionSpace {
+  	padding: 50px 0;
+  }
+
+  .portfolioRow .pColMain:nth-child(2n-1) .pCol {
+  	margin-top: 0;
+  }
+  .innerPageBannerCol {
+  	padding: 100px 0 30px;
+  }
+  .navCol a:hover, .navCol a.active {
+  	color: var(--bs-white);
+    opacity: 1;
+  }
+  .navCol a {
+    opacity: 0.8;
+  }
+  .logoCol img {
+  	width: 50px;
+  }
+  .fixedHeader .headerCol,  .headerCol {
+  	padding: 10px 0;
+  }
+}
+
+@media(max-width:575px) {
+  .sliderOuter .swiper-button-prev.swiperBtnStyle ,
+  .sliderOuter .swiper-button-next.swiperBtnStyle {
+    display: none;
+  }
+  .testimonialSlider .swiper-slide {
+  	padding: 0 0px 50px;
+  }
+  .swiperBtnStyle.swiper-button-next {
+  	right: auto;
+  	top: auto;
+  	bottom: 0;
+  	left: 50%;
+  	margin-left: 5px;
+  }
+  .swiperBtnStyle.swiper-button-prev {
+  	left: auto;
+  	top: auto;
+  	bottom: 0;
+  	right: 50%;
+  	margin-right: 5px;
+  }
+  .testimonialSlider {
+  	padding: 10px 0 0;
+  }
+  .sectionSpace {
+  	padding: 40px 0;
+  }
+  .cardStyle1 {
+  	padding: 15px;
+  }
+  .btn {
+  	font-size: 14px;
+  }
+  .xlTitle {
+  	font-size: 26px;
+  }
+  .lgTitle {
+  	font-size: 22px;
+  }
+  .mdTitle {
+  	font-size: 20px;
+  }
+  .swiperBtnStyle {
+  	width: 30px;
+  	height: 30px;
+  }
+  .swiper-button-next.swiperBtnStyle::after, .swiper-button-prev.swiperBtnStyle::after {
+  	font-size: 14px;
+  }
 }
