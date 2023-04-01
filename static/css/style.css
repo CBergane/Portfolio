@@ -301,7 +301,7 @@ input[type=text], input[type=email], select, textarea {
 /* Certificates */
 
 .swiper {
-  width: 600px;
+  width: 800px;
   height: 300px;
 }
 
@@ -316,6 +316,22 @@ input[type=text], input[type=email], select, textarea {
 }
 .cs1Title {
   min-height: 90px;
+}
+
+.sliderOuter {
+  position: relative;
+}
+.sliderOuter .swiper-button-next.swiperBtnStyle {
+  right: -50px;
+}
+.sliderOuter .swiper-button-prev.swiperBtnStyle {
+  left: -50px;
+}
+.sliderOuter .swiper-slide {
+  height: auto;
+}
+.swiperPaginationStyle span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: var(--primaryColor);
 }
 
 /* End Certificates */
