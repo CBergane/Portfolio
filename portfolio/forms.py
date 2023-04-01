@@ -8,7 +8,7 @@ class ContactForm(forms.ModelForm):
         max_length=100, 
         required=True, 
         widget=forms.TextInput(attrs={
-        'placeholder': '*Fullname', 
+        'placeholder': '*Ditt Fulla Namn', 
         }))
     email = forms.EmailField(
         max_length=254, 
@@ -20,7 +20,7 @@ class ContactForm(forms.ModelForm):
         max_length=1000, 
         required=True, 
         widget=forms.Textarea(attrs={
-            'placeholder': '*Message',
+            'placeholder': '*Meddelande',
             'rows': 6,
             }))
     

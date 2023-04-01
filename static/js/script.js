@@ -32,18 +32,4 @@ var swiper = new Swiper(".certificatesSlider", {
     nextEl: ".cert-swiper-button-next",
     prevEl: ".cert-swiper-button-prev",
   },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 16,
-    },
-  },
 });
