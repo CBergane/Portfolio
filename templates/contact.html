@@ -6,7 +6,7 @@
 {% block keywords %}{% endblock %}
 
 {% block content %}
-
+{% include 'includes/messages.html' %}
 
 <section>
     <div class="innerPageBannerCol">
@@ -36,7 +36,7 @@
               <label for="subject">Meddelande</label>
               {{form.message}}
   
-              <input class='btn btnPrimary' type="submit" value="Submit">
+              <input class='btn btnPrimary rounded' type="submit" value="Skicka">
           </form>
       </div>
     </div>
