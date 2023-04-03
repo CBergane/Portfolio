@@ -2,34 +2,34 @@
 <!-- ================================
 Start Navigation Bar
 ================================= -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a href="{% url 'bergane:index' %}"><img class="rounded-circle" src="{% static 'images/logo.png' %}" alt="..." width="60"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'bergane:index'%}">Hem</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'bergane:portfolios' %}">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'bergane:blogs' %}">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'bergane:contact'%}">Kontakt</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+<header>
+  <div class="headerCol">
+  <div class="container-fluid">
+      <div class="row align-items-center">
+      <div class="col-auto">
+          <div class="logoCol"><a href="{% url 'bergane:index' %}"><img src="{% static 'images/logo.png' %}" alt="..."></a></div>
       </div>
-    </div>
-  </nav>
+      <div class="col">
+          <div class="d-md-none">
+          <button class="navToggle">
+              <span class="navToggle__text">Toggle Menu</span>
+          </button>
+          </div>
+          <div class="navCollapseCol">
+          <div class="navCol">
+              <ul>
+              <li><a href="{%url 'bergane:index'%}">Hem</a></li>
+              <li><a href="{%url 'bergane:portfolios' %}">Portfolio</a></li>
+              <li><a href="{% url 'bergane:blogs' %}">Blog</a></li>
+              <li><a href="{%url 'bergane:contact'%}">Kontakta</a></li>
+              </ul>
+          </div>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+</header>
 
 <!-- ================================
 End Navigation Bar

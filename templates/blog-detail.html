@@ -1,6 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %} Bergane - Blog {% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
 {% block content %}
 
-<h1>blog detail</h1>
+<section>
+    <div class="innerPageBannerCol">
+        <div class="container">
+            <div class="row g-4 g-md-3 align-item-center">
+                <div class="col-md-6">
+                    <div class="bannerContent">
+                        <div class="x1Title pb-md-3">{{object.name|title}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-auto">
+                    <div class="authorCol">
+                        <h4 class="smTitle pb-3">{{object.author|title}}</h4>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <h4 class="smTitle pb-3">{{object.timestamp|date}}</h4>
+                </div>
+            </div>
+            <div class="sectionSpaceSm">
+                <div class="container">
+                  {{object.body|safe}}
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    
+</section>
 
 {% endblock %}
