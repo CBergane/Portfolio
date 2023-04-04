@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['cbergane.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'bergane.wsgi.application'
 #}
 
 DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Password validation
@@ -158,8 +158,8 @@ CORS_ORIGIN_WHITELIST = [
 
 # Alternatively, you can use '*' to allow any origin:
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = False
 
 
 CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com', 'http://127.0.0.1:8000/'

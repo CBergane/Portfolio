@@ -40,11 +40,11 @@ var swiper = new Swiper(".certificatesSlider", {
       spaceBetween: 16,
     },
     768: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 16,
     },
     1024: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 16,
     },
   },
