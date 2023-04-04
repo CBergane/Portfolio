@@ -154,6 +154,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
+NODE_MODULES_CACHE=False
+
 CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com', 'http://127.0.0.1:8000/'
 CSRF_TRUSTED_ORIGINS = [
     'https://cbergane.herokuapp.com',
