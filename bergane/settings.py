@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary_storage
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -145,6 +146,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dzdgvkurl',
+    'API_KEY': '362425712185521',
+    'API_SECRET': 'QrqGAFLYjcioxMQUqcTLafR-SFs'
+}
+
 CORS_ORIGIN_WHITELIST = [
     'https://8000-cbergane-portfolio-ttcez9bdao9.ws-eu93.gitpod.io',
 ]
@@ -154,7 +161,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
-NODE_MODULES_CACHE=False
 
 CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com', 'http://127.0.0.1:8000/'
 CSRF_TRUSTED_ORIGINS = [
