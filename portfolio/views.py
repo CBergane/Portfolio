@@ -30,6 +30,8 @@ class IndexView(generic.TemplateView):
 
 
 
+
+
 class ContactView(generic.FormView):
     template_name = 'contact.html'
     form_class = ContactForm
