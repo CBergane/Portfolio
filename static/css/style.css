@@ -847,7 +847,7 @@ input[type=text], input[type=email], select, textarea {
 
 @media(max-width:575px) {
   .swiper {
-    width: 410px;
+    width: 340px;
     height: 300px;
 }
   .sliderOuter .swiper-button-prev.swiperBtnStyle ,
