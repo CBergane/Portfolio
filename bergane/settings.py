@@ -33,7 +33,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io']
 
@@ -182,11 +182,14 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
-EMAIL_PORT = 587  # usually this is the port number for TLS
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False

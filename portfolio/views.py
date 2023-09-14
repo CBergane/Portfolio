@@ -37,7 +37,7 @@ class ContactView(generic.FormView):
 
     def form_valid(self, form):
         # Save the form data to the database (assuming the ContactForm model has a save() method)
-        form.save()
+        #form.save()
 
         # Extract data from the form
         name = form.cleaned_data['name']
@@ -52,8 +52,9 @@ class ContactView(generic.FormView):
         send_mail(
             subject,
             message_content,
-            settings.EMAIL_HOST_USER,  # this is the sender email
-            [settings.EMAIL_HOST_USER],  # this is the recipient email
+            settings.EMAIL_HOST_USER,
+            ['christian.bergane@gmail.com'],
+            fail_silently=False,  # this is the recipient email
         )
 
         messages.success(self.request, 'Tack, jag återkommer till er så snart som möjligt.')
