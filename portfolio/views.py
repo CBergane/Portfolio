@@ -54,7 +54,7 @@ class ContactView(generic.FormView):
             message_content,
             settings.EMAIL_HOST_USER,
             ['christian.bergane@gmail.com'],
-            fail_silently=False,  # this is the recipient email
+            fail_silently=False,
         )
 
         messages.success(self.request, 'Tack, jag återkommer till er så snart som möjligt.')

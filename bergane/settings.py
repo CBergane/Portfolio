@@ -33,7 +33,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io']
 
@@ -181,15 +181,14 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.cbergane.se'
 ]
 
-EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
 
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
