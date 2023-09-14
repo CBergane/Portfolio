@@ -14,8 +14,12 @@ from pathlib import Path
 import cloudinary_storage
 import os
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
+
+from dotenv import load_dotenv
+# if os.path.isfile('env.py'):
+#     import env
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io']
 
 SITE_ID = 1
 
@@ -98,8 +102,8 @@ WSGI_APPLICATION = 'bergane.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -170,9 +174,23 @@ CORS_ORIGIN_ALLOW_ALL = True
 # SESSION_COOKIE_SECURE = False
 
 
-CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com', 'http://127.0.0.1:8000/'
+#CSRF_COOKIE_DOMAIN = 'cbergane.herokuapp.com', 'http://127.0.0.1:8000/', 'www.cbergane.se', 'https://8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io/',
 CSRF_TRUSTED_ORIGINS = [
     'https://cbergane.herokuapp.com',
-    'https://8000-cbergane-portfolio-ttcez9bdao9.ws-eu93.gitpod.io',
-    
+    'https://8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io/',
+    'https://www.cbergane.se'
 ]
+
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = 465  # usually this is the port number for TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
+CSRF_COOKIE_HTTPONLY = True
+
+CSRF_COOKIE_NAME = 'csrftoken'

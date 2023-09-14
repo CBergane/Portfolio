@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.views import generic
 from .forms import ContactForm
+from django.conf import settings
+from django.core.mail import send_mail
 from .models import (
     UserProfile,
     Blog,
@@ -28,17 +30,32 @@ class IndexView(generic.TemplateView):
 		return context
 
 
-
-
-
-
 class ContactView(generic.FormView):
     template_name = 'contact.html'
     form_class = ContactForm
     success_url = '/'
 
     def form_valid(self, form):
+        # Save the form data to the database (assuming the ContactForm model has a save() method)
         form.save()
+
+        # Extract data from the form
+        name = form.cleaned_data['name']
+        email = form.cleaned_data['email']
+        message = form.cleaned_data['message']
+
+        # Prepare email content
+        subject = f"New message from {name}"
+        message_content = f"From: {name} <{email}>\n\n{message}"
+
+        # Send email to yourself
+        send_mail(
+            subject,
+            message_content,
+            settings.EMAIL_HOST_USER,  # this is the sender email
+            [settings.EMAIL_HOST_USER],  # this is the recipient email
+        )
+
         messages.success(self.request, 'Tack, jag återkommer till er så snart som möjligt.')
         return super().form_valid(form)
 

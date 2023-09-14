@@ -34,7 +34,15 @@
                                 <h4 class="smTitle pb-3">{{obj.timestamp|date}}</h4>
                             </div>
                             <a href="{% url 'bergane:blog' slug=obj.slug %}" >
-                            <img src="{{obj.image.url}}" class="pImg" alt="">
+                                {% if obj.image %}
+                                <div class="bannerImg">
+                                    <img src="{{ obj.image.url }}" class="pImg" alt="">
+                                </div>
+                                {% else %}
+                                <div class="bannerImg">
+                                    <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+                                </div>
+                                {% endif %}
                             </a>
                         </div>
                     </div>
