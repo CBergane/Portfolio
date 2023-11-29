@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Bergane - Flashcards {% endblock %}
+{% block decription %}Flashcards{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="banner">
+        <div class="container">
+            <div class="row g-4 g-md-3 align-items-center">
+                <div class="col-md-auto order-md-last">
+                    <h1 class="text-xl font-bold mb-4">Flashcards</h1>
+                    <div>
+                        {% for flashcard in flashcards %}
+                        <div class="mb-4 p-4 border rounded shadow">
+                            <p class="flashcard-question" {% if not flashcard.is_multiple_choice %}onclick="toggleAnswer(this)"{% endif %}>
+                                {{ flashcard.question | safe }}
+                            </p>
+                            {% if flashcard.is_multiple_choice %}
+                                {% for choice in flashcard.choices.all %}
+                                    <button onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
+                                {% endfor %}
+                            {% else %}
+                                <p class="flashcard-answer hidden">{{ flashcard.answer|safe }}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleAnswer(element) {
+        var answer = element.nextElementSibling;
+        answer.classList.toggle('hidden');
+    }
+</script>
+<script>
+    function checkAnswer(element, isCorrect) {
+        if (isCorrect === "True") {
+            element.classList.add('correct');
+            // Visa något meddelande eller utför en åtgärd för rätt svar
+        } else {
+            element.classList.add('incorrect');
+            // Visa felmeddelande eller feedback
+        }
+    }
+</script>
+    
+{% endblock %}

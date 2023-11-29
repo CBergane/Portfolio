@@ -21,9 +21,8 @@ Start Navigation Bar
                 <li><a href="{% url 'bergane:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Hem</a></li>
                 <li><a href="{% url 'bergane:portfolios' %}" class="{% if request.resolver_match.url_name == 'portfolios' %}active{% endif %}">Portfolio</a></li>
                 <li><a href="{% url 'bergane:blogs' %}" class="{% if request.resolver_match.url_name == 'blogs' %}active{% endif %}">Blog</a></li>
+                <li><a href="{% url 'flashcards:category_list' %}" class="{% if request.resolver_match.url_name == 'category_list' %}active{% endif %}">Flashcards</a></li>
                 <li><a href="{% url 'bergane:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Kontakta</a></li>
-                
-
               </ul>
           </div>
           </div>

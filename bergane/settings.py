@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'portfolio',
     'ckeditor',
+    'flashcards'
 ]
 
 MIDDLEWARE = [

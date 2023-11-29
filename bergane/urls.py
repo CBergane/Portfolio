@@ -24,6 +24,7 @@ from django.urls import re_path as url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls', namespace='portfolio/',)),
+    path('', include('flashcards.urls', namespace='flashcards/',)),
     url(r'^media/(?P<path>.*)$', serve,
         {'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,

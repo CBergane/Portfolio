@@ -17,6 +17,7 @@ font-family: 'Heebo', sans-serif; */
   --black: 900;
   --lightBg: #737373;
   --bs-white: #fcfcfcf4;
+  --underlineWidth: 60px;
 }
 
 html {
@@ -133,12 +134,13 @@ a, .btn {
 	text-align: right;
 }
 .navCol a {
-	font-size: 20px;
-	color: #000;
-  font-weight: var(--medium);
-  display: inline-block;
+  --underlineWidth: 0%;
   position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Justera vid behov */
+  overflow: hidden;
 }
+
 .navCol a:hover {
   color: var(--primaryColor);
 }
@@ -156,20 +158,43 @@ a, .btn {
   transition: all 500ms ease-in-out 0s;
   opacity: 0;
 }
+
+.navCol a::after {
+  content: '';
+  position: absolute;
+  width: var(--underlineWidth);
+  height: 2px; /* Justera tjockleken på understrykningen */
+  background: var(--primaryColor); /* Färg på understrykningen */
+  transition: width 0.3s;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .navCol a.active::before {
   opacity: 1;
-  width: 27px;
+  width: 45px !important;
   right: auto;
   left: 0;
 }
+
+.navCol a:hover::after,
+.navCol a.active::after {
+    width: 100%;
+}
+
 .navCol a:hover::before {
   opacity: 1;
   left: 0;
   right: 0;
 }
+
 .navCol a.active {
+  font-weight: bold; /* valfritt, för stil på aktiv sida */
+  --underlineWidth: 100%;
   color: var(--primaryColor);
 }
+
 .navCol li {
 	display: inline-block;
 }
@@ -559,7 +584,26 @@ input[type=text], input[type=email], select, textarea {
 
 /* Blog */
 
+/* Flashcards */
 
+.hidden {
+  display: none;
+}
+
+.flashcard-question {
+  cursor: pointer;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+.incorrect {
+  background-color: red;
+  color: white;
+}
+
+/* Flashcards end */
 
 /* Footer */
 

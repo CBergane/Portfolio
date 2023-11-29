@@ -17,6 +17,7 @@ font-family: 'Heebo', sans-serif; */
   --black: 900;
   --lightBg: #737373;
   --bs-white: #fcfcfcf4;
+  --underlineWidth: 60px;
 }
 
 html {
@@ -170,19 +171,16 @@ a, .btn {
   transform: translateX(-50%);
 }
 
+.navCol a.active::before {
+  opacity: 1;
+  width: 45px !important;
+  right: auto;
+  left: 0;
+}
+
 .navCol a:hover::after,
 .navCol a.active::after {
     width: 100%;
-}
-
-.navCol a.active::before {
-  -webkit-transition: all 500ms ease-in-out 0s;
-  -o-transition: all 500ms ease-in-out 0s;
-  transition: all 500ms ease-in-out 0s;
-  opacity: 1;
-  width: 100%;
-  right: auto;
-  left: 0;
 }
 
 .navCol a:hover::before {
@@ -586,6 +584,22 @@ input[type=text], input[type=email], select, textarea {
 
 /* Blog */
 
+.hidden {
+  display: none;
+}
+
+.flashcard-question {
+  cursor: pointer;
+}
+
+.correct {
+    background-color: green;
+    color: white;
+}
+.incorrect {
+    background-color: red;
+    color: white;
+}
 
 
 /* Footer */
