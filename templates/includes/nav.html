@@ -18,10 +18,12 @@ Start Navigation Bar
           <div class="navCollapseCol">
           <div class="navCol">
               <ul>
-              <li><a href="{%url 'bergane:index'%}">Hem</a></li>
-              <li><a href="{%url 'bergane:portfolios' %}">Portfolio</a></li>
-              <li><a href="{% url 'bergane:blogs' %}">Blog</a></li>
-              <li><a href="{%url 'bergane:contact'%}">Kontakta</a></li>
+                <li><a href="{% url 'bergane:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Hem</a></li>
+                <li><a href="{% url 'bergane:portfolios' %}" class="{% if request.resolver_match.url_name == 'portfolios' %}active{% endif %}">Portfolio</a></li>
+                <li><a href="{% url 'bergane:blogs' %}" class="{% if request.resolver_match.url_name == 'blogs' %}active{% endif %}">Blog</a></li>
+                <li><a href="{% url 'bergane:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Kontakta</a></li>
+                
+
               </ul>
           </div>
           </div>

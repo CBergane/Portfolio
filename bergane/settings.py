@@ -33,9 +33,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-uozwzj07bua.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-sf39lqfknqa.ws-eu106.gitpod.io']
 
 SITE_ID = 1
 
