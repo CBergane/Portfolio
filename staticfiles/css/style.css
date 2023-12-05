@@ -601,6 +601,27 @@ input[type=text], input[type=email], select, textarea {
     color: white;
 }
 
+/* Flashcards */
+
+.hidden {
+  display: none;
+}
+
+.flashcard-question {
+  cursor: pointer;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+.incorrect {
+  background-color: red;
+  color: white;
+}
+
+/* Flashcards end */
+
 
 /* Footer */
 

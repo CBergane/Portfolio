@@ -16,15 +16,16 @@
                     <div>
                         {% for flashcard in page_obj %}
                         <div class="mb-4 p-4 border rounded shadow">
-                            <p class="flashcard-question" {% if not flashcard.is_multiple_choice %}onclick="toggleAnswer(this)"{% endif %}>
+                            <div class="flashcard-question" {% if not flashcard.is_multiple_choice %}onclick="toggleAnswer(this)"{% endif %}>
                                 {{ flashcard.question | safe }}
-                            </p>
+                                {% if not flashcard.is_multiple_choice %}
+                                    <span class="flashcard-answer hidden">{{ flashcard.answer | safe }}</span>
+                                {% endif %}
+                            </div>
                             {% if flashcard.is_multiple_choice %}
                                 {% for choice in flashcard.choices.all %}
-                                    <button class="btn btnPrimary rounded" onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
+                                    <button onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
                                 {% endfor %}
-                            {% else %}
-                                <p class="flashcard-answer hidden">{{ flashcard.answer|safe }}</p>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -53,12 +54,7 @@
     </div>
 </section>
 
-<script>
-    function toggleAnswer(element) {
-        var answer = element.nextElementSibling;
-        answer.classList.toggle('hidden');
-    }
-</script>
+
 <script>
     function resetFlashcards() {
         // Dölja alla svar för klassiska flashcards
@@ -75,6 +71,14 @@
         document.querySelectorAll('button').forEach(button => {
             button.classList.remove('correct', 'incorrect');
         });
+    }
+</script>
+<script>
+    function toggleAnswer(questionElement) {
+        var answerElement = questionElement.querySelector('.flashcard-answer');
+        if (answerElement) {
+            answerElement.classList.toggle('hidden');
+        }
     }
 </script>
 <script>
