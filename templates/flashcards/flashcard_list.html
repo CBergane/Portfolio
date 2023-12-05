@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %} Bergane - Flashcards {% endblock %}
+{% block title %} Bergane - {{ category_name }} Flashcards {% endblock %}
 {% block decription %}Flashcards{% endblock %}
 {% block keywords %}{% endblock %}
 
@@ -19,7 +19,7 @@
                             <div class="flashcard-question" {% if not flashcard.is_multiple_choice %}onclick="toggleAnswer(this)"{% endif %}>
                                 {{ flashcard.question | safe }}
                                 {% if not flashcard.is_multiple_choice %}
-                                    <span class="flashcard-answer hidden">{{ flashcard.answer | safe }}</span>
+                                    <span class="flashcard-answer hidden uppercase">Svar: {{ flashcard.answer | safe }}</span>
                                 {% endif %}
                             </div>
                             {% if flashcard.is_multiple_choice %}
