@@ -14,20 +14,38 @@
                 <div class="col-md-auto order-md-last">
                     <h1 class="text-xl font-bold mb-4">Flashcards</h1>
                     <div>
-                        {% for flashcard in flashcards %}
+                        {% for flashcard in page_obj %}
                         <div class="mb-4 p-4 border rounded shadow">
                             <p class="flashcard-question" {% if not flashcard.is_multiple_choice %}onclick="toggleAnswer(this)"{% endif %}>
                                 {{ flashcard.question | safe }}
                             </p>
                             {% if flashcard.is_multiple_choice %}
                                 {% for choice in flashcard.choices.all %}
-                                    <button onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
+                                    <button class="btn btnPrimary rounded" onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
                                 {% endfor %}
                             {% else %}
                                 <p class="flashcard-answer hidden">{{ flashcard.answer|safe }}</p>
                             {% endif %}
                         </div>
                         {% endfor %}
+                        <button onclick="resetFlashcards()" class="mb-4 btn btnOutline rounded">Resett</button>
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="?page=1">&laquo; första</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}">föregående</a>
+                                {% endif %}
+                        
+                                <span class="current">
+                                    Sida {{ page_obj.number }} av {{ page_obj.paginator.num_pages }}.
+                                </span>
+                        
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}">nästa</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}">sista &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,6 +57,24 @@
     function toggleAnswer(element) {
         var answer = element.nextElementSibling;
         answer.classList.toggle('hidden');
+    }
+</script>
+<script>
+    function resetFlashcards() {
+        // Dölja alla svar för klassiska flashcards
+        document.querySelectorAll('.flashcard-answer').forEach(answer => {
+            answer.classList.add('hidden');
+        });
+
+        // Ta bort valda klasser från flervalsfrågor
+        document.querySelectorAll('.flashcard-choice').forEach(choice => {
+            choice.classList.remove('correct', 'incorrect');
+        });
+
+        // Alternativt, om du ändrar knappens utseende vid val
+        document.querySelectorAll('button').forEach(button => {
+            button.classList.remove('correct', 'incorrect');
+        });
     }
 </script>
 <script>
