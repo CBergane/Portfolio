@@ -24,15 +24,28 @@
                 <div class="col-md">
                     <h4 class="smTitle pb-3">{{object.timestamp|date}}</h4>
                 </div>
+                {% if object.image %}
+                    <div class="bannerImg">
+                        <img src="{{ object.image.url }}" class="pImg" alt="">
+                    </div>
+                    {% else %}
+                    <div class="bannerImg">
+                        <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+                    </div>
+                {% endif %}
             </div>
             <div class="sectionSpaceSm">
                 <div class="container">
                   {{object.body|safe}}
                 </div>
               </div>
+              <div class="sectionSpaceSm">
+              </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <section>
     
