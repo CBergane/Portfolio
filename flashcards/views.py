@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.db.models import Count
 from django.core.paginator import Paginator
 from .models import Category, Flashcard
 
 def category_list(request):
-    categories = Category.objects.all()
+    categories = Category.objects.annotate(num_flashcards=Count('flashcards')).order_by('id')
     return render(request, 'flashcards/category_list.html', {'categories': categories})
 
 def flashcard_list(request, category_id):

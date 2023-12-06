@@ -7,19 +7,28 @@
 {% block content %}
 <section>
     <div class="banner">
+        <div class="sectionSpaceSm">
+        </div>
         <div class="container">
             <div class="row g-4 g-md-3 align-items-center">
                 <div class="col-md-auto order-md-last">
                     <h1 class="text-xl font-bold mb-4">Kategorier</h1>
+                        <div class="sectionSpaceSm">
+                        </div>
                         <ul>
                             {% for category in categories %}
-                            <li class="mb-2">
-                                <a href="{% url 'flashcards:flashcard_list' category.id %}" class="text-blue-500 hover:text-blue-700">{{ category.name }}</a>
+                            <li class="mb-2 category-item">
+                                <a href="{% url 'flashcards:flashcard_list' category.id %}" class="">
+                                    <span class="category-name">{{ category.name }}</span>
+                                </a>
+                                    <span class="category-count px-4"> {{ category.num_flashcards }}</span>
                             </li>
                             {% endfor %}
-                        </ul>
+                        </ul>                        
                 </div>
             </div>
+        </div>
+        <div class="sectionSpace">
         </div>
     </div>
 </section>

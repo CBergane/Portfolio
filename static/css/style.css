@@ -602,6 +602,27 @@ input[type=text], input[type=email], select, textarea {
   background-color: red;
   color: white;
 }
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0; /* Lägg till lite utrymme runt varje rad */
+}
+
+.category-name {
+  flex-grow: 1; /* Låt kategorinamnet ta upp tillgängligt utrymme */
+  font-weight: bold; /* Gör texten fetare */
+  margin-right: 10px; /* Lägg till lite marginal till höger */
+}
+
+.category-count {
+  background-color: #f0f0f0; /* Ljus bakgrundsfärg */
+  padding: 3px 6px; /* Lägg till viss padding */
+  border-radius: 20px; /* Runda hörnen lite */
+  font-weight: bold; /* Gör siffran fet */
+  color: #333; /* Mörkare textfärg för kontrast */
+}
+
 
 /* Flashcards end */
 
