@@ -33,17 +33,17 @@
                         <div class="pagination">
                             <span class="step-links">
                                 {% if page_obj.has_previous %}
-                                    <a href="?page=1">&laquo; första</a>
-                                    <a href="?page={{ page_obj.previous_page_number }}">föregående</a>
+                                    <a href="?page=1">&laquo;&laquo; Första</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}"> &laquo;Föregående</a>
                                 {% endif %}
                         
                                 <span class="current">
-                                    Sida {{ page_obj.number }} av {{ page_obj.paginator.num_pages }}.
+                                    Sida {{ page_obj.number }} av {{ page_obj.paginator.num_pages }}
                                 </span>
                         
                                 {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}">nästa</a>
-                                    <a href="?page={{ page_obj.paginator.num_pages }}">sista &raquo;</a>
+                                    <a href="?page={{ page_obj.next_page_number }}">Nästa&raquo; </a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}"> Sista &raquo;&raquo;</a>
                                 {% endif %}
                             </span>
                         </div>
