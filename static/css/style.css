@@ -594,14 +594,6 @@ input[type=text], input[type=email], select, textarea {
   cursor: pointer;
 }
 
-.correct {
-  background-color: green;
-  color: white;
-}
-.incorrect {
-  background-color: red;
-  color: white;
-}
 .category-item {
   display: flex;
   justify-content: space-between;
@@ -623,6 +615,36 @@ input[type=text], input[type=email], select, textarea {
   color: #333; /* Mörkare textfärg för kontrast */
 }
 
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.choice-btn {
+  background-color: #f8f9fa; /* Ljus bakgrundsfärg */
+  color: #495057; /* Mörk textfärg */
+  border: 1px solid #ced4da; /* Ljusgrå kant */
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.choice-btn:hover {
+  background-color: #e2e6ea; /* Mörkare bakgrundsfärg vid hovring */
+}
+
+.correct {
+  background-color: #28a745; /* Grön bakgrundsfärg för korrekta svar */
+  color: white;
+}
+
+.incorrect {
+  background-color: #dc3545; /* Röd bakgrundsfärg för felaktiga svar */
+  color: white;
+}
 
 /* Flashcards end */
 

@@ -23,9 +23,11 @@
                                 {% endif %}
                             </div>
                             {% if flashcard.is_multiple_choice %}
-                                {% for choice in flashcard.choices.all %}
-                                    <button onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
-                                {% endfor %}
+                                <div class="choice-list">
+                                    {% for choice in flashcard.choices.all %}
+                                        <button class="choice-btn" onclick="checkAnswer(this, '{{ choice.is_correct }}')">{{ choice.text | safe }}</button>
+                                    {% endfor %}
+                                </div>
                             {% endif %}
                         </div>
                         {% endfor %}
