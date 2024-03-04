@@ -18,39 +18,35 @@ font-family: 'Heebo', sans-serif; */
   --lightBg: #c4c4c4;
   --bs-white: #fcfcfcf4;
   --underlineWidth: 60px;
-  --color-light: #fcfcfc;
+  --color-light: #121212;
 }
 
 [data-theme="dark"] {
   --primaryColor: #9C07B6; /* Du kan behålla vissa färger om de passar båda teman */
-  --primaryDarkColor: #280D3A; /* Mörkare version för mörkt tema */
+  --primaryDarkColor: #8b31c6; /* Mörkare version för mörkt tema */
   --primaryHoverColor: #900AA8;
   --secondaryColor: #4E9AF7; /* Justera färgen för bättre synlighet i mörkt tema */
   --baseColor: #E2E2E5; /* Ljusare textfärg för mörkt tema */
-  --lightBg: #21243D; /* Mörkare bakgrundsfärg */
+  --lightBg: #2e2e2e; /* Mörkare bakgrundsfärg */
   --bs-white: #121212; /* Mycket mörkare version för bakgrunder och element */
-  --color-light: #121212;
-}
-
-.color-text path {
-  fill: var(--color-light);
+  --color-light: #fcfcfc;
 }
 
 .theme-toggle-btn {
-  padding: 10px 20px;
+  padding: 15px;
   font-size: 16px;
-  color: var(--baseColor);
-  background-color: var(--primaryColor);
+  color: var(--bs-white);
+  background-color: var(--color-light);
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%;
   transition: background-color 0.3s ease;
-}
 
-.theme-toggle-btn:hover {
-  background-color: var(--primaryHoverColor);
+  position: fixed; /* Eller 'absolute' om du endast vill positionera den inom förälderselementet */
+  bottom: 20px; /* Avstånd från botten */
+  right: 20px; /* Avstånd från höger */
+  z-index: 1000; /* Se till att den ligger över andra element */
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -61,6 +57,10 @@ body {
   color: var(--baseColor);
   line-height: normal;
   background-color: var(--bs-white);
+}
+
+.bg-secondary-subtle {
+  background-color: var(--lightBg) !important;
 }
 
 ul {
@@ -333,6 +333,7 @@ a, .btn {
 .bannerBtnCol {
 	padding-top: 15px;
 }
+
 .innerPageBannerCol {
 	padding: 180px 0 150px;
 }
@@ -497,14 +498,14 @@ input[type=text], input[type=email], select, textarea {
 /* Certificates */
 
 .swiper {
-  background-color: var(--lightBg);
+  background-color: var(--bs-white);
   width: 800px;
   height: 300px;
 }
 
 .cardStyle1 {
 	padding: 25px;
-  background-color: var(--bs-white);
+	background-color: var(--bs-white);
 	border-radius: 4px;
   height: 100%;
 }
@@ -618,23 +619,6 @@ input[type=text], input[type=email], select, textarea {
 
 /* Blog */
 
-.hidden {
-  display: none;
-}
-
-.flashcard-question {
-  cursor: pointer;
-}
-
-.correct {
-    background-color: green;
-    color: white;
-}
-.incorrect {
-    background-color: red;
-    color: white;
-}
-
 /* Flashcards */
 
 .hidden {
@@ -699,8 +683,11 @@ input[type=text], input[type=email], select, textarea {
 
 /* Flashcards end */
 
-
 /* Footer */
+
+.footer {
+  padding-top: 15px;
+}
 
 .icons a {
   margin: 20px 20px;
