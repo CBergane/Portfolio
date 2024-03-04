@@ -16,8 +16,6 @@ import os
 import dj_database_url
 
 from dotenv import load_dotenv
-# if os.path.isfile('env.py'):
-#     import env
 
 load_dotenv()
 
@@ -35,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-sf39lqfknqa.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['www.cbergane.se', 'cbergane.se','cbergane.herokuapp.com', 'localhost', '127.0.0.1', '8000-cbergane-portfolio-b1jl0xvmjmj.ws-eu108.gitpod.io']
 
 SITE_ID = 1
 
@@ -53,7 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'portfolio',
     'ckeditor',
-    'flashcards'
+    'flashcards',
 ]
 
 MIDDLEWARE = [
@@ -160,10 +158,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dzdgvkurl',
-    'API_KEY': '362425712185521',
-    'API_SECRET': 'QrqGAFLYjcioxMQUqcTLafR-SFs'
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET')
 }
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 CORS_ORIGIN_WHITELIST = [
     'https://8000-cbergane-portfolio-ttcez9bdao9.ws-eu93.gitpod.io',

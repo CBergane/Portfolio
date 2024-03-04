@@ -15,9 +15,43 @@ font-family: 'Heebo', sans-serif; */
   --medium: 500;
   --bold: 700;
   --black: 900;
-  --lightBg: #737373;
+  --lightBg: #c4c4c4;
   --bs-white: #fcfcfcf4;
   --underlineWidth: 60px;
+  --color-light: #121212;
+}
+
+[data-theme="dark"] {
+  --primaryColor: #9C07B6; /* Du kan behålla vissa färger om de passar båda teman */
+  --primaryDarkColor: #8b31c6; /* Mörkare version för mörkt tema */
+  --primaryHoverColor: #900AA8;
+  --secondaryColor: #4E9AF7; /* Justera färgen för bättre synlighet i mörkt tema */
+  --baseColor: #E2E2E5; /* Ljusare textfärg för mörkt tema */
+  --lightBg: #2e2e2e; /* Mörkare bakgrundsfärg */
+  --bs-white: #121212; /* Mycket mörkare version för bakgrunder och element */
+  --color-light: #fcfcfc;
+}
+
+.color-text path {
+  background-color: var(--color-light);
+  -webkit-mask: url(logo.svg) no-repeat center;
+  mask: url(logo.svg) no-repeat center;
+}
+
+.theme-toggle-btn {
+  padding: 15px;
+  font-size: 16px;
+  color: var(--bs-white);
+  background-color: var(--color-light);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+
+  position: fixed; /* Eller 'absolute' om du endast vill positionera den inom förälderselementet */
+  bottom: 20px; /* Avstånd från botten */
+  right: 20px; /* Avstånd från höger */
+  z-index: 1000; /* Se till att den ligger över andra element */
 }
 
 html {
@@ -28,6 +62,11 @@ body {
   font-family: var(--baseFont);
   color: var(--baseColor);
   line-height: normal;
+  background-color: var(--bs-white);
+}
+
+.bg-secondary-subtle {
+  background-color: var(--lightBg) !important;
 }
 
 ul {
@@ -300,6 +339,7 @@ a, .btn {
 .bannerBtnCol {
 	padding-top: 15px;
 }
+
 .innerPageBannerCol {
 	padding: 180px 0 150px;
 }
@@ -464,6 +504,7 @@ input[type=text], input[type=email], select, textarea {
 /* Certificates */
 
 .swiper {
+  background-color: var(--bs-white);
   width: 800px;
   height: 300px;
 }
@@ -649,6 +690,10 @@ input[type=text], input[type=email], select, textarea {
 /* Flashcards end */
 
 /* Footer */
+
+.footer {
+  padding-top: 15px;
+}
 
 .icons a {
   margin: 20px 20px;

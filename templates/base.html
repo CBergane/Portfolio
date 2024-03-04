@@ -29,7 +29,7 @@
 
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body class="">
     {% include 'includes/nav.html' %}
     {% include 'includes/messages.html' %}
     {% block content %}
@@ -47,6 +47,37 @@
            $('#msg').hide('fade');
            }, 3000);
          
+      </script>
+
+      <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Funktion för att uppdatera knappens utseende baserat på det aktuella temat
+        function updateButtonTheme() {
+            if (body.getAttribute('data-theme') === 'dark') {
+                themeToggleBtn.innerHTML = '<i class="fa-regular fa-sun"></i>';
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateButtonTheme(); // Uppdatera knappens utseende efter temaväxling
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedTheme = localStorage.getItem('theme') || 'light'; // Använd systemets preferens eller standardvärdet 'light' om inget finns sparad
+            body.setAttribute('data-theme', savedTheme);
+            updateButtonTheme(); // Initial uppdatering av knappens utseende baserat på sparade temat
+        });
       </script>
 </body>
 </html>

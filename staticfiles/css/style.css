@@ -15,10 +15,42 @@ font-family: 'Heebo', sans-serif; */
   --medium: 500;
   --bold: 700;
   --black: 900;
-  --lightBg: #737373;
+  --lightBg: #c4c4c4;
   --bs-white: #fcfcfcf4;
   --underlineWidth: 60px;
+  --color-light: #fcfcfc;
 }
+
+[data-theme="dark"] {
+  --primaryColor: #9C07B6; /* Du kan behålla vissa färger om de passar båda teman */
+  --primaryDarkColor: #280D3A; /* Mörkare version för mörkt tema */
+  --primaryHoverColor: #900AA8;
+  --secondaryColor: #4E9AF7; /* Justera färgen för bättre synlighet i mörkt tema */
+  --baseColor: #E2E2E5; /* Ljusare textfärg för mörkt tema */
+  --lightBg: #21243D; /* Mörkare bakgrundsfärg */
+  --bs-white: #121212; /* Mycket mörkare version för bakgrunder och element */
+  --color-light: #121212;
+}
+
+.color-text path {
+  fill: var(--color-light);
+}
+
+.theme-toggle-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--baseColor);
+  background-color: var(--primaryColor);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--primaryHoverColor);
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -28,6 +60,7 @@ body {
   font-family: var(--baseFont);
   color: var(--baseColor);
   line-height: normal;
+  background-color: var(--bs-white);
 }
 
 ul {
@@ -464,13 +497,14 @@ input[type=text], input[type=email], select, textarea {
 /* Certificates */
 
 .swiper {
+  background-color: var(--lightBg);
   width: 800px;
   height: 300px;
 }
 
 .cardStyle1 {
 	padding: 25px;
-	background-color: var(--bs-white);
+  background-color: var(--bs-white);
 	border-radius: 4px;
   height: 100%;
 }

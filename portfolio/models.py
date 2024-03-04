@@ -12,6 +12,7 @@ class Skill(models.Model):
     name = models.CharField(max_length=20, blank=True, null=True)
     score = models.IntegerField(default=80, blank=True, null=True)
     image = models.FileField(blank=True, null=True, upload_to="skills")
+    icon_class = models.CharField(max_length=100, blank=True, help_text="Ange Font Awesome ikonklassen (t.ex. 'fas fa-user').")
     is_key_skill = models.BooleanField(default=False)
     
     def __str__(self):
