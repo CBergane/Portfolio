@@ -49,35 +49,36 @@
          
       </script>
 
-      <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const body = document.body;
+        <script>
+            const themeCheckbox = document.getElementById('theme-toggl');
+            const body = document.body;
 
-        // Funktion för att uppdatera knappens utseende baserat på det aktuella temat
-        function updateButtonTheme() {
-            if (body.getAttribute('data-theme') === 'dark') {
-                themeToggleBtn.innerHTML = '<i class="fa-regular fa-sun"></i>';
-            } else {
-                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            // Funktion för att uppdatera checkboxens status baserat på det aktuella temat
+            function updateCheckboxTheme() {
+                if (body.getAttribute('data-theme') === 'dark') {
+                    themeCheckbox.checked = true;
+                } else {
+                    themeCheckbox.checked = false;
+                }
             }
-        }
 
-        themeToggleBtn.addEventListener('click', function() {
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-            updateButtonTheme(); // Uppdatera knappens utseende efter temaväxling
-        });
+            themeCheckbox.addEventListener('change', function() {
+                if (themeCheckbox.checked) {
+                    body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+                updateCheckboxTheme(); // Uppdatera checkboxens status efter temaväxling
+            });
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const savedTheme = localStorage.getItem('theme') || 'light'; // Använd systemets preferens eller standardvärdet 'light' om inget finns sparad
-            body.setAttribute('data-theme', savedTheme);
-            updateButtonTheme(); // Initial uppdatering av knappens utseende baserat på sparade temat
-        });
-      </script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const savedTheme = localStorage.getItem('theme') || 'light'; // Använd systemets preferens eller standardvärdet 'light' om inget finns sparad
+                body.setAttribute('data-theme', savedTheme);
+                updateCheckboxTheme(); // Initial uppdatering av checkboxens status baserat på sparade temat
+            });
+        </script>
+
 </body>
 </html>
