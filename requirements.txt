@@ -4,13 +4,13 @@ cloudinary==1.39.0
 dj-database-url==2.1.0
 dj3-cloudinary-storage==0.0.6
 Django==5.0.3
-django-ckeditor==6.7.1
+django-ckeditor==6.5.1
 django-faicon==0.1.0
 django-js-asset==2.2.0
 gunicorn==21.2.0
 idna==3.6
 pillow==10.2.0
-psycopg2==2.9.9
+psycopg2==2.9.5
 python-dotenv==1.0.1
 PyYAML==6.0.1
 requests==2.31.0
